@@ -1,0 +1,15 @@
+<div class="sub">
+    <main>
+        <h1 style="text-align: center;">Register an Account</h1><br>
+        <label for="username">User Name : </label><br>
+        <input type="text" [(ngModel)]="User.username" /><br><br>
+        <label for="email">E-mail : </label><br>
+        <input type="email" [(ngModel)]="User.email"><br><br>
+        <label for="password">Password : </label><br>
+        <input type="password" [(ngModel)]="User.password"><br><br><br>
+        <label for="confirm pwd">Confrim Password</label><br>
+        <input type="password" [(ngModel)]="User.confirmPassword"><br><br>
+        <button (click)="sendData()">Submit</button><br>
+       
+    </main>
+</div>
