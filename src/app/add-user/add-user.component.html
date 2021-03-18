@@ -1,0 +1,97 @@
+<div class="sub">
+    <main>
+        <form [formGroup]="addUser" (ngSubmit)="sendData()">
+        <h1 style="text-align: center;">Add User</h1><br>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="id?.invalid && id?.touched" type="text" class="form-control"
+                    formControlName="id">
+                <div *ngIf="id?.invalid && id?.touched">
+                    <span class="text-danger" *ngIf="id?.errors?.required">ID is required</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">User Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="userName"
+                    [class.is-invalid]="userName?.invalid && userName?.touched">
+                <div *ngIf="userName?.invalid && userName?.touched">
+                    <span class="text-danger" *ngIf="userName?.errors?.required">Username is required</span>
+                    <span class="text-danger" *ngIf="username">Username must be at least 3 to 15 characters
+                        only</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="email?.invalid && email?.touched" type="email" class="form-control"
+                    formControlName="email">
+                <div *ngIf="email?.invalid && email?.touched">
+                    <span class="text-danger" *ngIf="email?.errors?.required">Email is required</span>
+                    <span class="text-danger" *ngIf="email?.errors?.pattern">Email must be in required format</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">E-mail Conformation</label>
+            <div class="col-sm-10">
+                <input  type="text"
+                    class="form-control" formControlName="emailConfirmed">
+            </div></div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="password?.invalid && password?.touched" type="password"
+                    class="form-control" formControlName="password">
+                <div *ngIf="password?.invalid && password?.touched">
+                    <span *ngIf="password?.errors?.pattern">At least 8 characters in length with numbers and special
+                        characters</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="confirmPassword?.invalid && confirmPassword?.touched" type="password"
+                    class="form-control" formControlName="confirmPassword">
+                <span *ngIf="addUser?.errors?.mismatch" class="text-danger">Password do not match</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched" type="tel"
+                    class="form-control" formControlName="phoneNumber" placeholder="+91">
+                    <div *ngIf ="phoneNumber?.invalid && phoneNumber?.touched" >
+                        <span *ngIf="phoneNumber?.errors?.required" class="text-danger">PhoneNumber Required</span>
+                        <span *ngIf = "phoneNumber?.errors?.maxLength">Enter Valid PhoneNumber</span>
+                    </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">User ID</label>
+            <div class="col-sm-10">
+                <input [class.is-invalid]="userId?.invalid && userId?.touched" type="text"
+                    class="form-control" formControlName="userId">
+                    <div *ngIf ="userId?.invalid && userId?.touched" >
+                        <span *ngIf="userId?.errors?.required" class="text-danger">User ID Required</span>
+                    </div>
+            </div></div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Role ID</label>
+                <div class="col-sm-10">
+                    <input [class.is-invalid]="roleId?.invalid && roleId?.touched" type="text"
+                        class="form-control" formControlName="roleId">
+                        <div *ngIf ="roleId?.invalid && roleId?.touched">
+                            <span *ngIf="roleId?.errors?.required" class="text-danger">Role ID Required</span>
+                        </div>
+                </div>
+            </div>
+          
+        <button type="submit" [disabled]="!addUser.valid" class="btn btn-primary ">Add User</button>
+    </form>
+    </main>
+</div>

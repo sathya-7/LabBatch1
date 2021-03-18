@@ -1,0 +1,28 @@
+<div>
+    <h1>Users List <button class="btn btn-outline-primary" routerLink ="['userDetails','addUser']">Add User</button></h1>
+    
+    <router-outlet></router-outlet>
+    <div *ngIf = getUserDetails>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">E-mail ID</th>
+                    <th scope="col">Phone-Number</th>
+                    <th scope="col"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor = "let users of getUserDetails">
+                <td>{{users.id}}</td>
+                <td>{{users.email}}</td>
+                <td>{{users.phoneNumber}}</td>
+                <button routerLink="/userDetails/addUser/{{users.id}}/" style="margin-right: 5px;margin-top: 5px;" type="button" class="btn btn-primary btn-sm">Edit</button>
+                <button style="margin-top: 5px;" type="button" class="btn btn-danger btn-sm"
+                routerLink="/userDetails/addUser/{{users.id}}" (click)="deleteData()">Delete</button>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
