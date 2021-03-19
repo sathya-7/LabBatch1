@@ -29,10 +29,6 @@ export class AddUserComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder) {
-    //   console.log(route)
-    // this.route.paramMap.subscribe(params => {
-    //   const id = String(params.get("id"));
-    // });
     
 
     this.addUser = this.formBuilder.group({
@@ -97,5 +93,10 @@ return this.addUser.patchValue(res)
   }
   get roleId(){
     return this.addUser.get('roleId');
+  }
+
+  logOut(){
+    this.router.navigateByUrl('/login')
+    return localStorage.clear();
   }
 }

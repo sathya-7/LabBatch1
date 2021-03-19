@@ -1,7 +1,7 @@
 <div class="sub">
     <main>
         <form [formGroup]="addUser" (ngSubmit)="sendData()">
-        <h1 style="text-align: center;">Add User        
+        <h1 style="text-align: center;">User Role Details        
              <button (click)="logOut()" style="margin: 10px 15px 0 0;" type="button" class="btn btn-secondary float-right">Logout</button>
         </h1><br>
         <div class="form-group row">
@@ -94,7 +94,7 @@
             </div>
           
         <button type="submit" [disabled]="!addUser.valid" class="btn btn-primary ">Add User</button>
-        <button style="margin-left: 5px;" (click)="deleteData()" type="button" class="btn btn-danger">Delete Account</button>
+        <button style="margin-left: 5px;" disabled type="button" class="btn btn-danger">Delete Account</button>
     </form>
     </main>
 </div>

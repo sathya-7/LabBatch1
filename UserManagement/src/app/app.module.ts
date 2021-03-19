@@ -13,6 +13,9 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AuthGuard } from './auth.guard';
+import { UserRoleComponent } from './user-role/user-role.component';
+import { AddUserRoleComponent } from './user-role/add-user-role/add-user-role.component';
+import { UpdateUserRoleComponent } from './user-role/update-user-role/update-user-role.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { AuthGuard } from './auth.guard';
     LoginAccountComponent,
     UsersListComponent,
     EditUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    UserRoleComponent,
+    AddUserRoleComponent,
+    UpdateUserRoleComponent,
   ],
   imports: [
     BrowserModule,

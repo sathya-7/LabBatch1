@@ -1,16 +1,15 @@
 <div>
-    <h1>Users List <button class="btn btn-outline-primary" routerLink ="['userDetails','addUser']">Add User</button>
+    <h1>Users Role 
         <button (click)="logOut()" style="margin: 10px 15px 0 0;" type="button" class="btn btn-secondary float-right">Logout</button>
     </h1>
     
     <router-outlet></router-outlet>
     <div *ngIf = getUserDetails>
-        <table class="table">
-            <thead class="thead-dark">
+        <table class="table table-bordered table-dark">
+            <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">E-mail ID</th>
-                    <th scope="col">Phone-Number</th>
                     <th scope="col"></th>
                     <th></th>
                 </tr>
@@ -19,11 +18,10 @@
             <tr *ngFor = "let users of getUserDetails">
                 <td>{{users.id}}</td>
                 <td>{{users.email}}</td>
-                <td>{{users.phoneNumber}}</td>
                
-                <button routerLink="/userDetails/{{users.id}}" style="margin-right: 5px;margin-top: 5px;" type="button" class="btn btn-primary btn-sm">Edit</button>
+                <button routerLink="/userRole/{{users.id}}" style="margin-right: 5px;margin-top: 5px;" type="button" class="btn btn-primary btn-sm">Edit</button>
 
-                <button routerLink="/userDetails/{{users.id}}" style="margin-top: 5px;" type="button" class="btn btn-danger btn-sm"
+                <button routerLink="/userRole/{{users.id}}" style="margin-top: 5px;" type="button" class="btn btn-danger btn-sm"
              >Delete</button>
         
             </tr>

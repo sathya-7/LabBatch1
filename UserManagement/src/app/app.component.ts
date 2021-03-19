@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SignUp';
+  hideRegister = "block";
+  hideLogin="block";
+
+  toggle() {
+    this.hideLogin = "none";
+    this.hideRegister = "none";
+  }
 }
